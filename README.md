@@ -46,6 +46,8 @@ Podría haber utilizado alguna bibiliteca css para agilizar el trabajo... pero c
 - Si en favoritos hay más de 1 poner "favoritos" en plural.
 - **Cargar de la API las imagenes segun su tamaño** y no limitarme a modificarlas con css.
 - Ocultar la puntuación de la película si no tiene votos, para que no salga 0.
+- Ocultar la la descripción en pantallas pequeñas o cuando no existe.
+- Ajustar el logotipo a pantallas pequeñas.
 - Página del detalle de la ficha con *useParams* de react-router-dom.
 - Comentarios en el código.
 

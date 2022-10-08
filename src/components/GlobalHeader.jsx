@@ -20,9 +20,9 @@ export const GlobalHeader = ({count, searchTerm, handleOnChange, handleOnSubmit}
         <div className='app-header__container'>
           <div className="app-header__container-left">
             <Link to="/" className="logo">
-              <span>Titín</span>
+              <span className="logo-name">Titín</span>
               <img src={logo} alt="logo" width="200" height="200" />
-              <span>Films</span>
+              <span className="logo-name">Films</span>
             </Link>
           </div>
           <div className='app-header__container-right'>

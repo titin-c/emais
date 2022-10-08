@@ -7,7 +7,7 @@ import favIcon from '../assets/icons/favorite_black.svg';
 import noCover from '../assets/no-cover.png'
 
 
-export const FilmItem = ({toggleFav, title, poster_path, overview, vote_average, id }) => {
+export const FilmItem = ({ toggleFav, title, poster_path, overview, vote_average, id }) => {
 
 
 
@@ -19,7 +19,7 @@ export const FilmItem = ({toggleFav, title, poster_path, overview, vote_average,
 
       <div className="film-item__header">
         <span>{vote_average == 0 ? "" : vote_average} </span>
-        <button className='film-item__header-fav-btn' onClick={()=>{toggleFav(id)}}>
+        <button className='film-item__header-fav-btn' onClick={() => { toggleFav(id) }}>
           <img src={favIcon} className="fav-icon" alt="Añadir a favoritos" width="20" height="20" />
         </button>
       </div>
@@ -34,7 +34,8 @@ export const FilmItem = ({toggleFav, title, poster_path, overview, vote_average,
       </div>
       <div className="film-item__footer" onClick={handleOnClick}>
         <h3 className='film-item__footer-title'>{title} </h3>
-<div className='film-item__footer-resume'>{overview}</div>
+        {overview && <div className='film-item__footer-resume'>{overview}</div>}
+        
       </div>
 
     </div>

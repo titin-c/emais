@@ -192,19 +192,15 @@
  
 
 @media  (max-width: 600px){
+
+    span.logo-name {
+        display: none;
+    }
+
     .app-header__container {
-        flex-direction: column;
-        padding: 10px;
+        padding: 10px 10px 10px 20px;
     
 
-    &-left {
-        margin-top: 20px;
-        order: 2;
-        
-    }
-    &-right {
-        width: 100%;
-    }
   }
   .header-title__container-left h1 {
     font-size: 1.2em;
