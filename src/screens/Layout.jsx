@@ -76,9 +76,15 @@ function Layout() {
         //si tenemos un término de búsqueda lo añadimos al query de la ruta
         if (searchTerm) {
             getMovies(`${SEARCH_API}${searchTerm}&language=es-ES`);
-            setSearchTerm("");
+            
         }
     };
+    // borramos el termino de búsqueda al hacer cklick en el input, para no tener que borrarlo manualmente
+    const handleClick = (event) =>{
+        if (searchTerm) {
+            setSearchTerm("");
+        }
+    }
     //cada vez que el input cambie, se modifica su valor
     const handleOnChange = (event) => {
         setSearchTerm(event.target.value);
@@ -91,7 +97,7 @@ function Layout() {
 
     return (
         <>
-            <GlobalHeader count={favArray.length} searchTerm={searchTerm} handleOnChange={handleOnChange} handleOnSubmit={handleOnSubmit} />
+            <GlobalHeader count={favArray.length} searchTerm={searchTerm} handleClick={handleClick} handleOnChange={handleOnChange} handleOnSubmit={handleOnSubmit} />
 
             <Routes>
                 <Route path="/" element={<HomeScreen loading={loading} favArray={favArray} movies={movies} searchTerm={searchTerm} toggleFav={toggleFav} />} />

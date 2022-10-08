@@ -58,3 +58,5 @@ Podría haber utilizado alguna bibiliteca css para agilizar el trabajo... pero c
 • Me enfrasqué en el diseño, que sin ser una obra de arte y para haberlo realizado en un par de ratos sin bibliotecas de apoyo.. está bastante decente. El problema es que me confié creyendo que iba a necesitar menos funciones de las que he utilizado... y si lo llego a organizar con más tiempo, lo hubiese hecho con *REDUX* para que quedase más limpio y no tener que marear con las props de padres a hijos y de hijos a padres.
 
 • Con más tiempo podría haber repasado las pruebas con Jest, que lo tengo bastante de lado.
+
+• A última hora me he dado cuenta que como se muestran los resultados de búsqueda en la home... si estás en cualquiera de las otras dos páginas no ves los resultados... y parece que no busca, aunque si vuelves a la home están los resultados esperandote, es un fallo de usabilidad... debería redirigirte a la home.

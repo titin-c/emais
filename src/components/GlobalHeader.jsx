@@ -9,7 +9,7 @@ import favIcon from '../assets/icons/favorite.svg';
 
 
 
-export const GlobalHeader = ({count, searchTerm, handleOnChange, handleOnSubmit}) => {
+export const GlobalHeader = ({count, searchTerm, handleOnChange, handleOnSubmit, handleClick}) => {
 
     // const value = useContext(DataContext);
     
@@ -35,9 +35,10 @@ export const GlobalHeader = ({count, searchTerm, handleOnChange, handleOnSubmit}
                 <input
                   type="search"
                   className="search"
-                  placeholder="Search..."
+                  placeholder="Buscar Película..."
                   value={searchTerm}
                   onChange={handleOnChange}
+                  onClick={handleClick}
                 />
                 <input type="submit" value="Buscar"  className="enviar" />
               </form>

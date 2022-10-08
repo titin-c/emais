@@ -49,8 +49,8 @@
 
 
 .film-image img {
-    width: 100%;
     min-width: 360px;
+    width: 100%;
     height: auto;
 }
 
@@ -102,7 +102,7 @@ p.release {
     }
 
     .film-image img {
-        min-width: 100%;
+        width: 100%;
         height: auto;
     }
 }
