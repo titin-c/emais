@@ -1,0 +1,153 @@
+.film-item {
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 20px;
+    margin: 10px;
+    flex: auto;
+
+
+    border-radius: 7px;
+    //border: 3px solid $emais-bg-color;
+    // -webkit-box-shadow: 0 0 10px 0 darken($emais-bg-color, 7%);
+    // box-shadow: 0 0 10px 0 darken($emais-bg-color, 7%);
+
+    width: 200px;
+    height: 300px;
+
+
+
+    //estilos de la cabecera del item
+    &__header {
+        position: absolute;
+        top: 0;
+        right: 0;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        z-index: 2;
+
+
+        &-fav-btn {
+            background: transparent;
+            border: none;
+            padding: 10px;
+
+            background: -moz-linear-gradient(45deg, rgba($emais-bg-color, 0) 0%, rgba($emais-bg-color, 0) 50%, rgba($emais-bg-color, 1) 100%, rgba($emais-bg-color, 1) 100%);
+            background: -webkit-linear-gradient(45deg, rgba($emais-bg-color, 0) 0%, rgba($emais-bg-color, 0) 50%, rgba($emais-bg-color, 1) 100%, rgba($emais-bg-color, 1) 100%);
+            background: linear-gradient(45deg, rgba($emais-bg-color, 0) 0%, rgba($emais-bg-color, 0) 50%, rgba($emais-bg-color, 1) 100%, rgba($emais-bg-color, 1) 100%);
+            filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#0019585d', endColorstr='#19585d', GradientType=1);
+
+
+        }
+    }
+
+    //estilos del contenedor del item
+    &__container {
+        position: absolute;
+        top: 0;
+        right: 0;
+        left: 0;
+        bottom: 0;
+        z-index: 0;
+        opacity: .8;
+        background-color: $emais-bg-color;
+
+        &-image {
+
+
+            & img {
+                width: 100%;
+                height: auto;
+
+                -webkit-transition: all .3s ease;
+                -moz-transition: all .3s ease;
+                -ms-transition: all .3s ease;
+                -o-transition: all .3s ease;
+                transition: all .3s ease;
+            }
+        }
+    }
+
+    &:hover {
+        //border-color:$emais-bg-color;
+        -webkit-box-shadow: none;
+        box-shadow: none;
+        opacity: 1;
+    }
+
+    &:hover .img-item {
+        opacity: .5;
+        filter: blur(4px);
+        width: 250px;
+        margin-left: -25px;
+        margin-top: -25px;
+
+
+    }
+
+    &:hover .film-item__footer-resume {
+        height: 100px;
+    }
+
+
+    //estilos del footer del item
+    &__footer {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        padding: 50px 10px 10px 10px;
+
+        background: -moz-linear-gradient(top, rgba($emais-dark-color, 0) 0%, rgba($emais-dark-color, 1) 100%);
+        background: -webkit-linear-gradient(top, rgba($emais-dark-color, 0) 0%, rgba($emais-dark-color, 1) 100%);
+        background: linear-gradient(to bottom, rgba($emais-dark-color, 0) 0%, rgba($emais-dark-color, 1) 100%);
+        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#0019585d', endColorstr='#19585d', GradientType=0);
+
+        &-title {
+            margin: 0;
+            padding: 0;
+
+            font-weight: lighter;
+
+
+        }
+
+        &-resume {
+            font-size: 12px;
+            height: 29px;
+            overflow: hidden;
+            color: $emais-light-color;
+
+            -webkit-transition: all .3s ease;
+            -moz-transition: all .3s ease;
+            -ms-transition: all .3s ease;
+            -o-transition: all .3s ease;
+            transition: all .3s ease;
+        }
+
+    }
+
+}
+@media (min-width:465px) {
+.favoritos .film-item{
+    max-width: 200px;
+}}
+@media (max-width:465px) {
+    .film-item {
+        width: 100%;
+        height: 450px;
+
+        &__container-image img {
+            width: 100%;
+        }
+
+        &:hover .img-item {
+            opacity: 0.5;
+            filter: blur(4px);
+            width: 120%;
+            margin-left: -10%;
+            margin-top: -10%;
+        }
+    }
+
+}

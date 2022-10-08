@@ -1,0 +1,17 @@
+.list{
+    margin: 0 auto 50px;
+        min-width: $emais-pg-min-width;
+        max-width: $emais-pg-max-width;
+
+        &__container {
+            margin: 15px auto 0;
+            box-sizing:border-box;
+            display: flex;
+            flex-wrap: wrap;
+            max-width: 1220px;
+        }
+}
+
+
+
+

@@ -1,0 +1,57 @@
+@import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
+
+body {
+  font-family: 'Varela Round', sans-serif;
+  background: $emais-bg-color;
+  color: $emais-opp-bg-color
+}
+
+input {
+  color: #000
+}
+
+
+//spiner css
+.spiner__container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  height: 190px;
+  align-items: center;
+  color: rgba($emais-light-color, .5);
+}
+
+.spinner {
+  position: relative;
+  width: 22.4px;
+  height: 22.4px;
+}
+
+.spinner::before,
+.spinner::after {
+  content: '';
+  width: 100%;
+  height: 100%;
+  display: block;
+  animation: spinner-b4c8mmmd 0.5s backwards, spinner-49opz7md 1.25s 0.5s infinite ease;
+  border: 5.6px solid #38424a;
+  border-radius: 50%;
+  box-shadow: 0 -33.6px 0 -5.6px #323A42;
+  position: absolute;
+}
+
+.spinner::after {
+  animation-delay: 0s, 1.25s;
+}
+
+@keyframes spinner-b4c8mmmd {
+  from {
+    box-shadow: 0 0 0 -5.6px #2dffcd;
+  }
+}
+
+@keyframes spinner-49opz7md {
+  to {
+    transform: rotate(360deg);
+  }
+}

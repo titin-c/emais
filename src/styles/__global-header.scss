@@ -1,0 +1,212 @@
+//Estilos del header gloval
+.app-header {
+    position: sticky;
+    top: 0px;
+    z-index: 999;
+    box-sizing: border-box;
+    background-color: rgba($emais-med-color, .94);
+
+    &__container {
+
+        min-width: $emais-pg-min-width;
+        max-width: $emais-pg-max-width;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 20px;
+
+
+
+
+        &-left {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        &-right {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+    }
+}
+
+
+.logo {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+
+    & img {
+        width: 40px;
+        height: 40px;
+        position: relative;
+    }
+
+    & span {
+        color: $emais-opp-bg-color;
+        text-decoration: none;
+        font-size: 2.5em;
+    }
+}
+
+// css del buscador del header
+
+.header-search {
+
+    margin-right: 20px;
+
+
+    & input.search {
+        background: transparent;
+        border: $emais-light-color solid 3px;
+        padding: 5px 0 5px 10px;
+        border-radius: 15px 40px 40px 15px;
+        height: 40px;
+        margin-right: -40px;
+        box-sizing: border-box;
+
+        color: $emais-light-color
+    }
+
+    & input.search:focus {
+        outline-style: none;
+        box-shadow: none;
+        border-color: #fff;
+        color: #fff;
+    }
+    & input.enviar {
+        background: transparent url("../../src/assets/icons/search.svg") center center no-repeat;
+        background-size: 70%;
+        border-radius: 100%;
+        border: none;
+        color: transparent;
+        width: 40px;
+        height: 40px;
+        &:focus {
+            outline-style: none;
+            box-shadow: none;
+        }
+    }
+
+    &-btn {
+        width: 38px;
+        height: 38px;
+        border-radius: 100%;
+        border: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: $emais-med-color;
+        border: solid 2px $emais-light-color;
+    }
+
+    //cuando está activo el contenedor crece el input
+    &.active input.header-search-input {
+        width: 250px;
+        padding: 10px 60px 10px 10px;
+    }
+
+    & form {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+    }
+}
+
+
+
+
+// boton de favoritos del header
+.header-fav {
+
+    &-btn {
+        width: 42px;
+        height: 42px;
+        background: transparent;
+        border: none;
+        position: relative;
+        padding: 0;
+        display: block;
+    }
+
+    &-label {
+        position: absolute;
+        color: $emais-secondary;
+        display: flex;
+        top: 0px;
+        right: 0px;
+        width: 42px;
+        height: 40px;
+        align-items: center;
+        justify-content: center;
+        box-sizing: border-box;
+        font-size: 10px;
+    }
+
+}
+
+
+//sección de títulos de página
+
+
+.header-title {
+    padding: 20px 10px;
+    -webkit-box-shadow: 0 5px 10px 0 rgba(0, 0, 0, .1);
+    box-shadow: 0 5px 10px 0 rgba(0, 0, 0, .1);
+
+    &__container {
+        min-width: $emais-pg-min-width;
+        max-width: $emais-pg-max-width;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border-radius: 0 0 10px 10px;
+        padding: 0 20px;
+
+
+        &-left {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            & h1 {
+                margin: 0;
+                padding: 0;
+                color: $emais-light-color
+            }
+        }
+
+        &-right {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+    }
+}
+
+
+ 
+
+@media  (max-width: 600px){
+    .app-header__container {
+        flex-direction: column;
+        padding: 10px;
+    
+
+    &-left {
+        margin-top: 20px;
+        order: 2;
+        
+    }
+    &-right {
+        width: 100%;
+    }
+  }
+  .header-title__container-left h1 {
+    font-size: 1.2em;
+}
+}

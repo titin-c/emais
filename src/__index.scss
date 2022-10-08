@@ -1,0 +1,21 @@
+
+@import "./styles/_css-reset" ;
+
+@import "./styles/_css-settings" ;
+
+//css global de la página
+@import "./styles/_global" ;
+
+//css de la cabecera global
+@import "./styles/__global-header" ;
+
+//css listado de películas
+@import "./styles/__film-list-items" ;
+
+
+//css de los items del listado de peliculas
+@import "./styles/__film-item" ;
+
+//css de la página de peliculas
+@import "./styles/__film-screen" ;
+
