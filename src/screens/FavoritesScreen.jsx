@@ -6,7 +6,7 @@ export const FavoritesScreen = ({ loading, toggleFav, favArray }) => {
     <>
       <div className="header-title">
         <div className="header-title__container">
-          <div className="header-title__container-left"><h1>{favArray.length} Favorito{favArray.length > 1 && "s" || favArray.length === 0 && "s"}</h1></div>
+          <div className="header-title__container-left"><h1>{favArray.length} Favorito{(favArray.length > 1) && ("s") || (favArray.length === 0) && ("s")}</h1></div>
           <div className="header-title__container-right"></div>
         </div>
       </div>

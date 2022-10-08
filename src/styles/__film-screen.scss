@@ -41,6 +41,13 @@
                 display: flex;
                 justify-content: space-between;
                 align-items: center;
+
+                &-icons {
+                    width: 130px;
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: flex-start;
+                }
             }
         }
 
@@ -75,6 +82,28 @@ p.release {
     color: $emais-light-color
 }
 
+a.btn-descarga {
+    margin-top: 40px;
+    display: flex;
+    width: 100%;
+    background: rgba($emais-secondary, .8);
+    padding: 15px;
+    box-sizing: border-box;
+    border-radius: 10px;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    text-decoration: none;
+    color: $emais-bg-color;
+    font-weight: 600;
+
+    & img {margin-right: 20px;}
+
+    &:hover {
+        background: $emais-secondary;
+    }
+}
+
 
 
 @media (max-width: 600px) {
@@ -104,5 +133,17 @@ p.release {
     .film-image img {
         width: 100%;
         height: auto;
+        min-width: unset;
+    }
+
+    a.btn-descarga {
+        padding: 15px;
+        font-size: 18px;
+    
+        & img {margin-right: 15px;}
+    
+        &:hover {
+            background: $emais-secondary;
+        }
     }
 }

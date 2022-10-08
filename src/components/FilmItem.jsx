@@ -1,4 +1,4 @@
-import React, { useCallback, useContext } from 'react';
+import React, { useCallback } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 import { IMAGE_API_S } from '../services/movieServices';
@@ -18,7 +18,7 @@ export const FilmItem = ({ toggleFav, title, poster_path, overview, vote_average
     <div className="film-item">
 
       <div className="film-item__header">
-        <span>{vote_average == 0 ? "" : vote_average} </span>
+        <span>{vote_average === 0 ? "" : vote_average} </span>
         <button className='film-item__header-fav-btn' onClick={() => { toggleFav(id) }}>
           <img src={favIcon} className="fav-icon" alt="Añadir a favoritos" width="20" height="20" />
         </button>

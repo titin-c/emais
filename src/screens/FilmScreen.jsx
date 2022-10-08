@@ -11,7 +11,7 @@ import descargaIcon from '../assets/icons/descarga.svg';
 import noCover from '../assets/no-cover.png'
 
 export const FilmScreen = ({ toggleFav }) => {
-
+  
   const [filmDetails, setFilmDetails] = useState(null)
   const params = useParams();
   // con useParams obtenemos los detalles  de la pélicula por su id

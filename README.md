@@ -49,7 +49,7 @@ Podría haber utilizado alguna bibiliteca css para agilizar el trabajo... pero c
 - Ocultar la la descripción en pantallas pequeñas o cuando no existe.
 - Ajustar el logotipo a pantallas pequeñas.
 - Página del detalle de la ficha con *useParams* de react-router-dom.
-- Comentarios en el código.
+- Comentarios aclarativos y buen tabulado en el código.
 
 ## `Cosas que hubiese hecho mejor` 
 

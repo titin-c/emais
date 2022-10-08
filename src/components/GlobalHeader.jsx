@@ -1,6 +1,5 @@
 
 import { Link } from "react-router-dom";
-import useToggle from "../hooks/useToggle";
 //importamos iconos
 import logo from '../assets/ticket.svg';
 import favIcon from '../assets/icons/favorite.svg';
@@ -13,8 +12,6 @@ export const GlobalHeader = ({count, searchTerm, handleOnChange, handleOnSubmit,
 
     // const value = useContext(DataContext);
     
-
-    const { toggled, setToggle } = useToggle(false);
     return (
         <header className="app-header">
         <div className='app-header__container'>
@@ -28,7 +25,7 @@ export const GlobalHeader = ({count, searchTerm, handleOnChange, handleOnSubmit,
           <div className='app-header__container-right'>
             <div
 
-              className={toggled ? `header-search active` : `header-search`}
+              className="header-search active"
             >
               
               <form className="searchform" onSubmit={handleOnSubmit}>
