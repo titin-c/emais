@@ -1,6 +1,8 @@
 const BASE_URL = 'https://api.themoviedb.org/3/';
-// Roi const API_KEY = '8f781d70654b5a6f2fa69770d1d115a3';
-const API_KEY = '871626d4b8cbce6358920dd023385d9e';
+
+// Me he creado una API key propia, para que siga funcionando, si algun día eliminas la que me facilitaste.
+const API_KEY = process.env.REACT_APP_THEMOVIEDB_API_KEY;
+
 
 const LANG = 'es-ES'
 const endpoint = {
