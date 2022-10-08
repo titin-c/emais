@@ -2,11 +2,12 @@
 
 import { Link, useParams } from "react-router-dom";
 import { useEffect, useState } from 'react';
-import { getOneFilmById, IMAGE_API_M, IMAGE_API_S } from "../services/movieServices";
+import { getOneFilmById, IMAGE_API_M, IMAGE_API_S, IMAGE_API_O } from "../services/movieServices";
 
 //cargamos las imagenes
 import volver from '../assets/icons/return.svg';
 import favIcon from '../assets/icons/favorite_black.svg';
+import descargaIcon from '../assets/icons/descarga.svg';
 import noCover from '../assets/no-cover.png'
 
 export const FilmScreen = ({ toggleFav }) => {
@@ -48,17 +49,34 @@ export const FilmScreen = ({ toggleFav }) => {
             <div className="film__container-right">
               <div className="film__container-right_header">
                 <span className='averaje'>{parseInt(filmDetails.vote_average)}<small className="averaje-small"> / {filmDetails.vote_count} votos</small></span>
-                <button className='film-fav-btn' onClick={() => toggleFav(filmDetails.id)}>
-                  <img src={favIcon} className="fav-icon" alt="Añadir a favoritos" width="40" height="40" />
-                </button>
+                <div className="film__container-right_header-icons">
+                  <Link to="/" >
+                    <img src={volver} alt="" width="50px" />
+                  </Link>
+                  <button className='film-fav-btn' onClick={() => toggleFav(filmDetails.id)}>
+                    <img src={favIcon} className="fav-icon" alt="Añadir a favoritos" width="40" height="40" />
+                  </button>
+                </div>
               </div>
 
               <h1 className='title'>{filmDetails.title}</h1>
               <p className="original_title"><em>{filmDetails.original_title}</em></p>
               <p className='release'>{filmDetails.overview}</p>
-              <p className='resume'>{filmDetails.release_date} </p>
-              <p className='resume'>
-                <Link to="/" ><img src={volver} alt="" width="50px" /></Link> </p>
+              {filmDetails.release_date &&
+              <p className='resume'><em>Fecha de estreno: {filmDetails.release_date} </em></p>
+              }
+              <div>
+                {filmDetails.poster_path &&
+                  <a
+                    href={IMAGE_API_O + filmDetails.poster_path}
+                    className="btn-descarga"
+                    target="_blanc"
+                    download={`Descargar poster de ${filmDetails.title}`}>
+                    <img src={descargaIcon} alt={`Descargar poster de ${filmDetails.title}`} className="dwl-icon" width="30" height="30" />
+                    <span>Descargar poster GRATIS</span>
+                  </a>
+                }
+              </div>
             </div>
           </div>
         </div>

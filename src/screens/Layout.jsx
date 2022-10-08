@@ -1,7 +1,7 @@
 import { FEATURED_API, SEARCH_API } from "../services/movieServices";
 
 import { useEffect, useState } from "react";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, useNavigate } from "react-router-dom";
 
 //componentes
 import { GlobalHeader } from "../components/GlobalHeader";
@@ -19,7 +19,7 @@ function Layout() {
     const [searchTerm, setSearchTerm] = useState("");
     const [favArray, setFavArray] = useState([])
 
-
+    const navigate = useNavigate();
     //función para añadir y quitar de favritos
     const toggleFav = (id) => {
         //miramos si NO está en el array de favoritos
@@ -73,10 +73,11 @@ function Layout() {
     //al buscar evitamos refrescar el navegador
     const handleOnSubmit = (event) => {
         event.preventDefault();
+        
         //si tenemos un término de búsqueda lo añadimos al query de la ruta
         if (searchTerm) {
             getMovies(`${SEARCH_API}${searchTerm}&language=es-ES`);
-            
+            navigate("/");
         }
     };
     // borramos el termino de búsqueda al hacer cklick en el input, para no tener que borrarlo manualmente

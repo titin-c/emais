@@ -14,6 +14,8 @@ const endpoint = {
 // ruta de las imagenes segun tamaño
 export const IMAGE_API_S = `https://image.tmdb.org/t/p/w342`;
 export const IMAGE_API_M = `https://image.tmdb.org/t/p/w500`;
+export const IMAGE_API_O = `https://image.tmdb.org/t/p/original`;
+
 
 // ruta de películas destacadas
 export const FEATURED_API = `${BASE_URL}${endpoint.discover}?sort_by=popularity.desc&api_key=${API_KEY}&language=${LANG}`;

@@ -26,6 +26,7 @@
         align-items: center;
         z-index: 2;
 
+        
 
         &-fav-btn {
             background: transparent;
@@ -39,6 +40,7 @@
 
 
         }
+        
     }
 
     //estilos del contenedor del item
@@ -128,6 +130,37 @@
     }
 
 }
+.film__container-right_header-icons {
+    width: 130px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+a.btn-descarga {
+    margin-top: 40px;
+    display: flex;
+    width: 100%;
+    background: rgba($emais-secondary, .8);
+    padding: 15px;
+    box-sizing: border-box;
+    border-radius: 10px;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    text-decoration: none;
+    color: $emais-bg-color;
+    font-weight: 600;
+
+    & img {margin-right: 20px;}
+
+    &:hover {
+        background: $emais-secondary;
+    }
+}
+
+
+
+
 @media (min-width:465px) {
 .favoritos .film-item{
     max-width: 200px;
