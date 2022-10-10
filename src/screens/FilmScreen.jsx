@@ -37,6 +37,17 @@ export const FilmScreen = ({ toggleFav }) => {
             )}          </div>
           <div className="film__container">
             <div className="film__container-left">
+            <div className="film__container-left_header mobile">
+                <span className='averaje'>{parseInt(filmDetails.vote_average)}<small className="averaje-small"> / {filmDetails.vote_count} votos</small></span>
+                <div className="film__container-right_header-icons">
+                  <Link to="/" >
+                    <img src={volver} alt="" width="50px" />
+                  </Link>
+                  <button className='film-fav-btn' onClick={() => toggleFav(filmDetails.id)}>
+                    <img src={favIcon} className="fav-icon" alt="Añadir a favoritos" width="40" height="40" />
+                  </button>
+                </div>
+              </div>
               <div className="film-image">
                 {filmDetails.poster_path ? (
                   // Tengo encuenta las películas que no tienen poster y coloco una imagen
@@ -47,7 +58,7 @@ export const FilmScreen = ({ toggleFav }) => {
               </div>
             </div>
             <div className="film__container-right">
-              <div className="film__container-right_header">
+              <div className="film__container-right_header screen">
                 <span className='averaje'>{parseInt(filmDetails.vote_average)}<small className="averaje-small"> / {filmDetails.vote_count} votos</small></span>
                 <div className="film__container-right_header-icons">
                   <Link to="/" >
