@@ -56,7 +56,7 @@
 // css del buscador del header
 
 .header-search {
-    margin: 0 10px 0 20px;
+    margin: 0 0 0 10px;
 
 
 
@@ -127,8 +127,8 @@
 .header-fav {
 
     &-btn {
-        width: 42px;
-        height: 42px;
+        width: 47px;
+        height: 47px;
         background: transparent;
         border: none;
         position: relative;
@@ -158,12 +158,12 @@
         display: flex;
         top: 0px;
         right: 0px;
-        width: 42px;
-        height: 40px;
+        width: 47px;
+        height: 44px;
         align-items: center;
         justify-content: center;
         box-sizing: border-box;
-        font-size: 10px;
+        font-size: 12px;
     }
 
 }

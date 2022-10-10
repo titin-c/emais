@@ -1,8 +1,8 @@
 
 
-import { Link, useParams } from "react-router-dom";
+import { Link, useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
-import { getOneFilmById, IMAGE_API_M, IMAGE_API_S, IMAGE_API_O } from "../services/movieServices";
+import { getOneFilmById, IMAGE_API_M, IMAGE_API_S, IMAGE_API_O } from '../services/movieServices';
 
 //cargamos las imagenes
 import volver from '../assets/icons/return.svg';

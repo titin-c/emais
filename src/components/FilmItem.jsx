@@ -1,15 +1,12 @@
-import React, { useCallback } from 'react';
+import { useCallback } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 import { IMAGE_API_S } from '../services/movieServices';
-
+//cargamos imágenes 
 import favIcon from '../assets/icons/favorite_black.svg';
 import noCover from '../assets/no-cover.png';
 
-
 export const FilmItem = ({ toggleFav, title, poster_path, overview, vote_average, id }) => {
-
-
 
   const navigate = useNavigate();
   const handleOnClick = useCallback(() => navigate(`/pelicula/${id}`, { replace: true }), [navigate]);

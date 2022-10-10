@@ -1,5 +1,4 @@
-import React from "react";
-import { FilmItem } from "../components/FilmItem";
+import { FilmItem } from '../components/FilmItem';
 //importamos imagenes
 import noFoundImg from '../assets/bg.svg'
 

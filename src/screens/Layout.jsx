@@ -1,13 +1,13 @@
-import { FEATURED_API, SEARCH_API } from "../services/movieServices";
+import { FEATURED_API, SEARCH_API } from '../services/movieServices';
 
-import { useEffect, useState } from "react";
-import { Routes, Route, useNavigate } from "react-router-dom";
+import { useEffect, useState } from 'react';
+import { Routes, Route, useNavigate } from 'react-router-dom';
 
 //componentes
-import { GlobalHeader } from "../components/GlobalHeader";
-import { FavoritesScreen } from "../screens/FavoritesScreen";
-import { FilmScreen } from "../screens/FilmScreen";
-import { HomeScreen } from "../screens/HomeScreen";
+import { GlobalHeader } from '../components/GlobalHeader';
+import { FavoritesScreen } from '../screens/FavoritesScreen';
+import { FilmScreen } from '../screens/FilmScreen';
+import { HomeScreen } from '../screens/HomeScreen';
 
 
 

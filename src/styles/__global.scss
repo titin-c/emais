@@ -6,9 +6,10 @@ body {
   color: $emais-opp-bg-color
 }
 
-input {
-  color: #000
-}
+a{color:$emais-secondary;
+&:hover{
+  text-decoration: none;
+}}
 
 
 //spiner css
