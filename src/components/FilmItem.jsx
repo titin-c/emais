@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import { IMAGE_API_S } from '../services/movieServices';
 
 import favIcon from '../assets/icons/favorite_black.svg';
-import noCover from '../assets/no-cover.png'
+import noCover from '../assets/no-cover.png';
 
 
 export const FilmItem = ({ toggleFav, title, poster_path, overview, vote_average, id }) => {
@@ -35,7 +35,7 @@ export const FilmItem = ({ toggleFav, title, poster_path, overview, vote_average
       <div className="film-item__footer" onClick={handleOnClick}>
         <h3 className='film-item__footer-title'>{title} </h3>
         {overview && <div className='film-item__footer-resume'>{overview}</div>}
-        
+
       </div>
 
     </div>

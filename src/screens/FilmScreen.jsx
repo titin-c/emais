@@ -11,7 +11,7 @@ import descargaIcon from '../assets/icons/descarga.svg';
 import noCover from '../assets/no-cover.png'
 
 export const FilmScreen = ({ toggleFav }) => {
-  
+
   const [filmDetails, setFilmDetails] = useState(null)
   const params = useParams();
   // con useParams obtenemos los detalles  de la pélicula por su id
@@ -63,7 +63,7 @@ export const FilmScreen = ({ toggleFav }) => {
               <p className="original_title"><em>{filmDetails.original_title}</em></p>
               <p className='release'>{filmDetails.overview}</p>
               {filmDetails.release_date &&
-              <p className='resume'><em>Fecha de estreno: {filmDetails.release_date} </em></p>
+                <p className='resume'><em>Fecha de estreno: {filmDetails.release_date} </em></p>
               }
               <div>
                 {filmDetails.poster_path &&
@@ -73,7 +73,7 @@ export const FilmScreen = ({ toggleFav }) => {
                     target="_blanc"
                     download={`Descargar poster de ${filmDetails.title}`}>
                     <img src={descargaIcon} alt={`Descargar poster de ${filmDetails.title}`} className="dwl-icon" width="30" height="30" />
-                    <span>Descargar poster GRATIS</span>
+                    <span>Descargar póster</span>
                   </a>
                 }
               </div>

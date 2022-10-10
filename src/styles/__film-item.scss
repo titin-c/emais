@@ -26,21 +26,29 @@
         align-items: center;
         z-index: 2;
 
-        
+
 
         &-fav-btn {
             background: transparent;
             border: none;
             padding: 10px;
 
+            -webkit-transition: all .3s ease;
+            -moz-transition: all .3s ease;
+            -ms-transition: all .3s ease;
+            -o-transition: all .3s ease;
+            transition: all .3s ease;
+
             background: -moz-linear-gradient(45deg, rgba($emais-bg-color, 0) 0%, rgba($emais-bg-color, 0) 50%, rgba($emais-bg-color, 1) 100%, rgba($emais-bg-color, 1) 100%);
             background: -webkit-linear-gradient(45deg, rgba($emais-bg-color, 0) 0%, rgba($emais-bg-color, 0) 50%, rgba($emais-bg-color, 1) 100%, rgba($emais-bg-color, 1) 100%);
             background: linear-gradient(45deg, rgba($emais-bg-color, 0) 0%, rgba($emais-bg-color, 0) 50%, rgba($emais-bg-color, 1) 100%, rgba($emais-bg-color, 1) 100%);
             filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#0019585d', endColorstr='#19585d', GradientType=1);
 
-
+            &:hover {
+                opacity: .8;
+            }
         }
-        
+
     }
 
     //estilos del contenedor del item
@@ -133,9 +141,11 @@
 
 
 @media (min-width:465px) {
-.favoritos .film-item{
-    max-width: 200px;
-}}
+    .favoritos .film-item {
+        max-width: 200px;
+    }
+}
+
 @media (max-width:465px) {
     .film-item {
         width: 44%;
@@ -154,12 +164,13 @@
         }
     }
 
-    .film-item__header-fav-btn .fav-icon{
+    .film-item__header-fav-btn .fav-icon {
         width: 30px;
         height: 30px;
     }
+
     .film-item .film-item__footer-resume {
-     
+
         display: none;
     }
 }

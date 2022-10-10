@@ -49,14 +49,15 @@
         color: $emais-opp-bg-color;
         text-decoration: none;
         font-size: 2.5em;
+        font-weight: bold;
     }
 }
 
 // css del buscador del header
 
 .header-search {
+    margin: 0 10px 0 20px;
 
-    margin-right: 20px;
 
 
     & input.search {
@@ -67,6 +68,7 @@
         height: 40px;
         margin-right: -40px;
         box-sizing: border-box;
+        width: 100%;
 
         color: $emais-light-color
     }
@@ -77,6 +79,7 @@
         border-color: #fff;
         color: #fff;
     }
+
     & input.enviar {
         background: transparent url("../../src/assets/icons/search.svg") center center no-repeat;
         background-size: 70%;
@@ -85,6 +88,7 @@
         color: transparent;
         width: 40px;
         height: 40px;
+
         &:focus {
             outline-style: none;
             box-shadow: none;
@@ -130,6 +134,22 @@
         position: relative;
         padding: 0;
         display: block;
+
+        & img {
+            opacity: .8;
+
+            -webkit-transition: all .3s ease;
+            -moz-transition: all .3s ease;
+            -ms-transition: all .3s ease;
+            -o-transition: all .3s ease;
+            transition: all .3s ease;
+        }
+
+        &:hover img {
+            opacity: 1;
+            -webkit-filter: drop-shadow(0px 0px 5px $emais-dark-color);
+  filter: drop-shadow(0px 0px 5px $emais-dark-color);
+        }
     }
 
     &-label {
@@ -156,6 +176,24 @@
     padding: 20px 10px;
     -webkit-box-shadow: 0 5px 10px 0 rgba(0, 0, 0, .1);
     box-shadow: 0 5px 10px 0 rgba(0, 0, 0, .1);
+    -webkit-transition: all .5s ease;
+    -moz-transition: all .5s ease;
+    -ms-transition: all .5s ease;
+    -o-transition: all .5s ease;
+    transition: all .5s ease;
+
+    &.home {
+        height: 0;
+        overflow: hidden;
+        padding: 0 10px;
+
+    }
+
+    &.home-active {
+        height: unset;
+        overflow: auto;
+        padding: 20px 10px;
+    }
 
     &__container {
         min-width: $emais-pg-min-width;
@@ -176,7 +214,8 @@
             & h1 {
                 margin: 0;
                 padding: 0;
-                color: $emais-light-color
+                color: $emais-light-color;
+                font-weight: normal;
             }
         }
 
@@ -189,9 +228,9 @@
 }
 
 
- 
 
-@media  (max-width: 600px){
+
+@media (max-width: 600px) {
 
     span.logo-name {
         display: none;
@@ -199,10 +238,15 @@
 
     .app-header__container {
         padding: 10px 10px 10px 20px;
-    
 
-  }
-  .header-title__container-left h1 {
-    font-size: 1.2em;
-}
+
+    }
+
+    .header-title__container-left h1 {
+        font-size: 1.2em;
+    }
+
+    .header-fav-label {
+        font-size: 16px;
+    }
 }
