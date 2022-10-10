@@ -1,4 +1,6 @@
-import { FilmItem } from "../components/FilmItem"
+import { FilmItem } from "../components/FilmItem";
+//importamos imagenes
+import noFoundImg from '../assets/bg.svg'
 
 
 export const FavoritesScreen = ({ loading, toggleFav, favArray }) => {
@@ -14,9 +16,16 @@ export const FavoritesScreen = ({ loading, toggleFav, favArray }) => {
         <div className="list__container favoritos">
           {loading ? <div className="spiner__container"><div className="spinner"></div></div>
             :
-            (favArray.length === 0 ? <div className="spiner__container "><p>Aun no has añadido ninguna película a FAVORITOS...<br /> Puedes pulsar sobre los CORAZONES para añadirlas. </p></div> : favArray.map(fav => (
-              <FilmItem toggleFav={toggleFav} key={fav.id} {...fav} />
-            )))
+            (favArray.length === 0 ?
+              <div className="no-list__container">
+                <div className="no-list__container-bg"><img src={noFoundImg} alt="Sigue buscando" width="100%" height="auto" /></div>
+                <div className="spiner__container ">
+                  <p>Aun no has añadido ninguna película a FAVORITOS...<br /> Puedes pulsar sobre los CORAZONES para añadirlas. </p>
+                </div>
+              </div>
+              : favArray.map(fav => (
+                <FilmItem toggleFav={toggleFav} key={fav.id} {...fav} />
+              )))
           }
         </div>
       </div>

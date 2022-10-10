@@ -39,7 +39,7 @@ function Layout() {
             const auxFav = favArray.filter(fav => {
                 return fav.id !== id
             })
-
+            alert(`Vas a eliminar la película de favoritos`)
             setFavArray([...auxFav])
         }
 
@@ -62,6 +62,9 @@ function Layout() {
         }
     }, [favArray])
 
+
+    
+
     //obtemeos los datos del api
     const getMovies = (API) => {
         setLoading(true);
@@ -73,7 +76,7 @@ function Layout() {
     //al buscar evitamos refrescar el navegador
     const handleOnSubmit = (event) => {
         event.preventDefault();
-        
+
         //si tenemos un término de búsqueda lo añadimos al query de la ruta
         if (searchTerm) {
             getMovies(`${SEARCH_API}${searchTerm}&language=es-ES`);
@@ -81,15 +84,17 @@ function Layout() {
         }
     };
     // borramos el termino de búsqueda al hacer cklick en el input, para no tener que borrarlo manualmente
-    const handleClick = (event) =>{
+    const handleClick = () => {
         if (searchTerm) {
             setSearchTerm("");
         }
     }
-    //cada vez que el input cambie, se modifica su valor
+     //cada vez que el input cambie, se modifica su valor
     const handleOnChange = (event) => {
         setSearchTerm(event.target.value);
-    };
+    }; 
+
+    
 
     useEffect(() => {
         getMovies(FEATURED_API);
