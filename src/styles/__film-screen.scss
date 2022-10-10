@@ -138,14 +138,16 @@ a.btn-descarga {
         max-width: 600px;
 
         &-left {
+            position: relative;
             &_header {
                 display: flex;
                 padding: 10px 10px 5px;
                 justify-content: space-between;
                 align-items: center;
-                position: absolute;
+                position: sticky;
                 left: 10px;
                 right: 10px;
+                top: 67px;
                 background-color: rgba($emais-bg-color, .7);
             }
         }
