@@ -2,7 +2,8 @@
 import { Link } from "react-router-dom";
 //importamos iconos
 import logo from '../assets/ticket.svg';
-import favIcon from '../assets/icons/favorite.svg';
+import favIconOff from '../assets/icons/favorite_off.svg';
+import favIconOn from '../assets/icons/favorite_on.svg';
 
 
 
@@ -44,8 +45,8 @@ export const GlobalHeader = ({count, searchTerm, handleOnChange, handleOnSubmit,
             <div className="header-fav">
 
               <Link className='header-fav-btn' to="/favoritos">
-                <img src={favIcon} className="fav-icon" alt="Favoritos" width="100%" height="100%" />
-                <span className='header-fav-label'>{count}</span>
+                <img src={count > 0 ? favIconOff : favIconOn} className="fav-icon" alt="Favoritos" width="100%" height="100%" />
+                {count > 0 && <span className='header-fav-label'>{count}</span>}
 
 
               </Link>
