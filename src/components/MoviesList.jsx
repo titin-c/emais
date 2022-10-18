@@ -1,11 +1,14 @@
 import React, { useContext, useEffect, useState } from "react";
 import Movie from "./Movie";
 import MovieContext from "../context/MovieContext";
+import { Link, useNavigate } from "react-router-dom";
+
+import noFoundImg from '../assets/bg.svg'
 
 
 const MoviesList = () => {
   
-
+  const navigate = useNavigate();
   const { filtered, fetchMoviesByQueryType, moviesData, typeQuery, isLoading, page, setPage } =
     useContext(MovieContext);
     useEffect(() => {
@@ -30,20 +33,23 @@ const downpage = ()=>{
 }
 
 
-console.log(moviesData.total_pages)
-
   return (
     <> 
     <div className="list__container">
-    {isLoading ? 'Cargando' : (
+    {isLoading ? <div className="spiner__container"><div className="spinner"></div></div> : (
       filtered.length > 0 ? 
       filtered.map((movie) => {
         return <Movie key={movie.id} movie={movie} />;
       })
-      : <p className="info">No hay películas</p>
+      : <div className="no-list__container">
+      <div className="no-list__container-bg"><img src={noFoundImg} alt="Sigue buscando"  width="100%" height="auto"/></div>
+      <div className="spiner__container ">
+        <p>No hemos encontrado ninguna película, <br /> inténtalo con otro término de búsqueda... <Link onClick={() => navigate(-1)}   >Regresar</Link> </p>
+      </div>
+    </div>
     )}
       </div> 
-      {!isLoading && (
+      {filtered.length > 0 && (
       <div className='pagination'>
             <button 
             disabled={ isLoading || page === 1}

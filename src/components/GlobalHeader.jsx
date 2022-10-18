@@ -36,9 +36,8 @@ export const GlobalHeader = () => {
               {favourites.length > 0 && <span className='header-fav-label'>{favourites.length}</span>}
             </Link>
           </div>
-          <div className="header-search active">
             <Search />
-          </div>
+          
 
         </div>
       </div>
