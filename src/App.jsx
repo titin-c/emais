@@ -1,9 +1,12 @@
+import { MovieProvider } from './context/MovieContext';
 import Layout from './screens/Layout';
 
 function App() {
 
   return (
-    <Layout />
+    <MovieProvider>
+      <Layout />
+    </MovieProvider>
   );
 }
 

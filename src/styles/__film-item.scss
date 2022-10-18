@@ -86,8 +86,7 @@
     }
 
     &:hover .img-item {
-        opacity: .5;
-        filter: blur(4px);
+        opacity: 1;
         width: 150%;
         margin-left: -25%;
         margin-top: -25%;
@@ -99,14 +98,17 @@
         height: 100px;
     }
 
-
+    &:hover .film-item__footer {
+        
+        backdrop-filter: blur(10px) brightness(80%);
+    }
     //estilos del footer del item
     &__footer {
         position: absolute;
         bottom: 0;
         right: 0;
         left: 0;
-        padding: 50px 10px 10px 10px;
+        padding: 10px;
 
         background: -moz-linear-gradient(top, rgba($emais-dark-color, 0) 0%, rgba($emais-dark-color, 1) 100%);
         background: -webkit-linear-gradient(top, rgba($emais-dark-color, 0) 0%, rgba($emais-dark-color, 1) 100%);
@@ -115,8 +117,9 @@
 
         &-title {
             margin: 0;
+            line-height: 1em;
             padding: 0;
-
+            color: $emais-opp-bg-color;
             font-weight: lighter;
 
 

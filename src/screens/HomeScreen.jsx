@@ -1,41 +1,44 @@
-import { FilmItem } from '../components/FilmItem';
+
 //importamos imagenes
-import noFoundImg from '../assets/bg.svg'
+import Filter from '../components/Filter';
+import MoviesList from '../components/MoviesList';
+import Header from '../components/Header';
+import Panel from '../components/Panel';
+import { useContext, useEffect } from 'react';
+import MovieContext from '../context/MovieContext';
 
-export const HomeScreen = ({ loading, favArray, toggleFav, movies, searchTerm }) => {
 
+export const HomeScreen = () => {
+  const {  setHeader,typeQuery } = useContext(MovieContext);
+
+  useEffect(() => {
+    if (typeQuery == 'popular') { setHeader("Tendencias"); }
+    if (typeQuery == 'now_playing') { setHeader("Estrenos"); }
+    if (typeQuery == 'top_rated') { setHeader("Más votadas"); }
+    if (typeQuery == 'upcoming') { setHeader("Próximamente"); }
+  }, [typeQuery])
+  
+  
   return (
 
     <>
 
-      <div className={searchTerm ? "header-title home-active" : "header-title home"}>
-        <div className="header-title__container">
-          <div className="header-title__container-left">
-
-            <h1>Busqueda: {searchTerm}</h1>
-          </div>
-          <div className="header-title__container-right"></div>
+      <div className={"header-title home-active"}>
+        <div className="header-title__left">
+          <div className="header-title__left__container"><Panel /></div>
         </div>
+        <div className="header-title__center">
+          <div className="header-title__center__container"><Filter /></div>
+        </div>
+        <div className="header-title__right"></div>
       </div>
 
       <div className='list'>
 
-        <div className="list__container">
-          {loading ? <div className="spiner__container"><div className="spinner"></div></div>
-            :
-            (movies && movies.length > 0 ?
-              movies.map((movie) => <FilmItem favArray={favArray} toggleFav={toggleFav} key={movie.id}  {...movie} />)
-              :
-              <div className="no-list__container">
-                <div className="no-list__container-bg"><img src={noFoundImg} alt="Sigue buscando"  width="100%" height="auto"/></div>
-                <div className="spiner__container ">
-                  <p>No hemos encontrado ninguna película, <br /> inténtalo con otro término de búsqueda... </p>
-                </div>
-              </div>)
-          }
+        <h1 className="section-title"><Header /></h1>
+        
+          <MoviesList />
 
-
-        </div>
       </div>
 
     </>

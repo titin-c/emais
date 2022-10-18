@@ -1,34 +1,29 @@
-import { FilmItem } from '../components/FilmItem';
-//importamos imagenes
-import noFoundImg from '../assets/bg.svg'
-import { Link } from 'react-router-dom';
+
+import { useContext } from 'react';
+import MovieContext from "../context/MovieContext";
+import MoviesList from '../components/MoviesList';
+import Header from '../components/Header';
 
 
-export const FavoritesScreen = ({ loading, toggleFav, favArray }) => {
+export const FavoritesScreen = ({ }) => {
+  const {
+    getFavourites,
+    favourites
+
+  } = useContext(MovieContext);
+
+  getFavourites()
   return (
     <>
-      <div className="header-title">
+    <div className={ "header-title home-active" }>
         <div className="header-title__container">
-          <div className="header-title__container-left"><h1>{favArray.length} Favorito{(favArray.length > 1) && ("s") || (favArray.length === 0) && ("s")}</h1></div>
-          <div className="header-title__container-right"></div>
+          <div className="header-title__container-left">
+          <h1 className="section-title">{favourites.length} <Header />{(favourites.length > 1 || favourites.length === 0) && ("s")}</h1>
+          </div>
         </div>
       </div>
-      <div className="list">
-        <div className="list__container favoritos">
-          {loading ? <div className="spiner__container"><div className="spinner"></div></div>
-            :
-            (favArray.length === 0 ?
-              <div className="no-list__container">
-                <div className="no-list__container-bg"><img src={noFoundImg} alt="Sigue buscando" width="100%" height="auto" /></div>
-                <div className="spiner__container ">
-                  <p>Aun no has añadido ninguna película a FAVORITOS...<br /> Puedes pulsar sobre los CORAZONES para añadirlas. <br /> <Link to='/'>Regresar</Link></p>
-                </div>
-              </div>
-              : favArray.map(fav => (
-                <FilmItem toggleFav={toggleFav} key={fav.id} {...fav} />
-              )))
-          }
-        </div>
+      <div className="list favoritos">
+            < MoviesList />
       </div>
     </>
   )

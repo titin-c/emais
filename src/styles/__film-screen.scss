@@ -61,6 +61,13 @@
                         -ms-transition: all .3s ease;
                         -o-transition: all .3s ease;
                         transition: all .3s ease;
+                        padding: 0;
+                        background: transparent;
+
+                        & .fav-icon {
+                            width: 40px;
+                            height: 40px;
+                        }
 
                         &:hover {
                             opacity: 1;
@@ -70,6 +77,33 @@
 
                 }
             }
+        }
+
+    }
+
+    &-footer {
+        margin: 0 auto 50px;
+        min-width: $emais-pg-min-width;
+        max-width: $emais-pg-max-width;
+        display: flex;
+        justify-content: space-between;
+        padding: 0 20px 20px;
+
+        & h4 {
+            font-weight: normal;
+            color: $emais-light-color;
+            margin: 15px 0 5px 0;
+            font-size: 1.1em;
+        }
+
+        & ul {
+            margin: 0;
+            padding-left: 20px;
+            color: $emais-light-color;
+        }
+
+        & ul span {
+            color: $emais-opp-bg-color;
         }
 
     }
@@ -94,6 +128,11 @@ h1.title {
 
 p.original_title {
     color: $emais-light-color
+}
+
+p.estreno {
+    color: $emais-light-color;
+    font-size: .9em;
 }
 
 p.release {
@@ -139,6 +178,7 @@ a.btn-descarga {
 
         &-left {
             position: relative;
+
             &_header {
                 display: flex;
                 padding: 10px 10px 5px;
@@ -154,7 +194,10 @@ a.btn-descarga {
 
         &-right {
             padding-left: 10px;
-            &_header {display: none;}
+
+            &_header {
+                display: none;
+            }
         }
     }
 
@@ -186,5 +229,12 @@ a.btn-descarga {
         &:hover {
             background: $emais-secondary;
         }
+    }
+
+    .film-footer {
+        display: block;
+        justify-content: space-between;
+        padding: 0 20px 20px;
+
     }
 }

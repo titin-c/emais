@@ -1,20 +1,18 @@
-.list{
+.list {
     margin: 0 auto 50px;
-        min-width: $emais-pg-min-width;
-        max-width: $emais-pg-max-width;
+    min-width: $emais-pg-min-width;
+    max-width: $emais-pg-max-width;
 
-        &__container {
-            margin: 15px auto 0;
-            box-sizing:border-box;
-            display: flex;
-            flex-wrap: wrap;
-            max-width: 1220px;
-        }
+    &__container {
+        margin: 15px auto 0;
+        box-sizing: border-box;
+        display: flex;
+        flex-wrap: wrap;
+        max-width: 1220px;
+    }
 }
 
-
-
-.no-list{
+.no-list {
 
     &__container {
         width: 100%;
@@ -31,4 +29,37 @@
     }
 }
 
+.pagination {
+    margin: 30px auto;
+    text-align: center;
+    & button{
+        background-color: transparent;
+        border: solid 1px $emais-light-color;
+        color:$emais-light-color;
+        padding: 5px 10px;
+        border-radius: 40px;
+        margin: 0 20px;
+        font-size: .9em;
+    }
+    & span{
+        color:$emais-secondary;
+    }
+}
 
+@media (max-width: 600px) {
+    .no-list__container-bg {
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: -71px;
+        overflow: hidden;
+        z-index: 0;
+        opacity: 0.1;
+
+        & img {
+            position: absolute;
+            left: -25%;
+            width: 150%;
+        }
+    }
+}
